@@ -5,10 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <script type="module" src="/build/components.esm.js"></script>
     <script nomodule src="/build/components.js"></script>
+    <script src="https://kit.fontawesome.com/2a62d28c86.js" crossorigin="anonymous"></script>
+    <script src="../node_modules/@fortawesome/fontawesome-free/css/all.css"></script>
+    <script src="../node_modules/@fortawesome/fontawesome-free/js/all.js"></script>
+
+    <style>
+
+      :root {
+        --button-width: 70%;
+      }
+
+    </style>
+
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+
+    <!-- <my-component first="Stencil" last="Inicio"></my-component> -->
+
+    <login1-component username='Usuario'></login1-component>
+
+    <!-- <login2-component></login2-component> -->
+
   </body>
 </html>

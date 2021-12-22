@@ -6,6 +6,17 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface Login1Component {
+        "boton": string;
+        "buttonTitle": string;
+        "password": string;
+        "socialTitle": string;
+        "titulo": string;
+        "username": string;
+        "usernameIcon": string;
+    }
+    interface Login2Component {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +33,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLLogin1ComponentElement extends Components.Login1Component, HTMLStencilElement {
+    }
+    var HTMLLogin1ComponentElement: {
+        prototype: HTMLLogin1ComponentElement;
+        new (): HTMLLogin1ComponentElement;
+    };
+    interface HTMLLogin2ComponentElement extends Components.Login2Component, HTMLStencilElement {
+    }
+    var HTMLLogin2ComponentElement: {
+        prototype: HTMLLogin2ComponentElement;
+        new (): HTMLLogin2ComponentElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +52,24 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "login1-component": HTMLLogin1ComponentElement;
+        "login2-component": HTMLLogin2ComponentElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface Login1Component {
+        "boton"?: string;
+        "buttonTitle"?: string;
+        "password"?: string;
+        "socialTitle"?: string;
+        "titulo"?: string;
+        "username"?: string;
+        "usernameIcon"?: string;
+    }
+    interface Login2Component {
+        "onLogin"?: (event: CustomEvent<any>) => void;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +85,8 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "login1-component": Login1Component;
+        "login2-component": Login2Component;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +94,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "login1-component": LocalJSX.Login1Component & JSXBase.HTMLAttributes<HTMLLogin1ComponentElement>;
+            "login2-component": LocalJSX.Login2Component & JSXBase.HTMLAttributes<HTMLLogin2ComponentElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
